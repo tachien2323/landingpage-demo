@@ -1,26 +1,163 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bt-navy: #180F50;
+  --bt-navy-light: #25196B;
+  --bt-cyan: #34C8D2;
+  --bt-teal: #1FA3AD;
+  --bt-surface: #F7F8FC;
+  --bt-cyan-soft: #EAF9FA;
+  --bt-border: #E6E8F0;
+  --bt-text: #180F50;
+  --bt-muted: #4A4766;
+  --background: #F7F8FC;
+  --foreground: #180F50;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Native <dialog> modal backdrop (light-dismiss-a-dialog best practice) */
+dialog.bt-dialog {
+  margin: auto;
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: min(920px, 95vw);
+  max-height: 92vh;
+  width: 100%;
+  overflow: visible;
+}
+
+dialog.bt-dialog::backdrop {
+  background-color: rgba(24, 15, 80, 0.62);
+  backdrop-filter: blur(4px);
+}
+
+/* Responsive data table with sticky headers & container queries (responsive-table best practice) */
+.table-wrapper {
+  overflow: auto;
+  max-inline-size: 100%;
+  max-block-size: min(620px, 80vh);
+  container-type: inline-size;
+  border-radius: 1rem;
+  border: 1px solid var(--bt-border);
+  background: #ffffff;
+}
+
+.bt-benefits-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.bt-benefits-table thead {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 2;
+}
+
+.bt-benefits-table tbody th {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 1;
+  background: #ffffff;
+}
+
+@container (width < 640px) {
+  .bt-benefits-table,
+  .bt-benefits-table thead,
+  .bt-benefits-table tbody,
+  .bt-benefits-table tr,
+  .bt-benefits-table th,
+  .bt-benefits-table td {
+    display: block;
+  }
+
+  .bt-benefits-table thead {
+    display: none;
+  }
+
+  .bt-benefits-table tbody tr {
+    margin-block-end: 1rem;
+    border: 1px solid var(--bt-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+
+  .bt-benefits-table tbody th {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 2;
+    background: var(--bt-cyan-soft);
+    color: var(--bt-navy);
+    width: 100%;
+  }
+
+  .bt-benefits-table td:nth-child(2)::before {
+    content: var(--label-2, "Plan A") ": ";
+    font-weight: 700;
+    color: var(--bt-navy);
+  }
+  .bt-benefits-table td:nth-child(3)::before {
+    content: var(--label-3, "Plan B") ": ";
+    font-weight: 700;
+    color: var(--bt-navy);
+  }
+  .bt-benefits-table td:nth-child(4)::before {
+    content: var(--label-4, "Plan C") ": ";
+    font-weight: 700;
+    color: var(--bt-navy);
+  }
+  .bt-benefits-table td:nth-child(5)::before {
+    content: var(--label-5, "Plan D") ": ";
+    font-weight: 700;
+    color: var(--bt-navy);
+  }
+}
+
+/* Form validation after interaction (:user-invalid & :user-valid best practice) */
+.bt-field .hint {
+  display: block;
+  color: #5f6368;
+  font-size: 0.78rem;
+  margin-bottom: 0.25rem;
+}
+
+.bt-field .error-msg {
+  display: none;
+  color: #d93025;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.bt-input:user-invalid,
+.bt-input.user-invalid-fallback {
+  border-color: #d93025 !important;
+  background-color: #fce8e6 !important;
+}
+
+.bt-input:user-invalid + .error-msg,
+.bt-input.user-invalid-fallback + .error-msg {
+  display: block;
+}
+
+.bt-input:user-valid,
+.bt-input.user-valid-fallback {
+  border-color: #1FA3AD;
 }
