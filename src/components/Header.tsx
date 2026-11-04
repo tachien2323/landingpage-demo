@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { ShieldCheck, Users, Globe, Menu, X, Settings } from "lucide-react";
+import { ShieldCheck, Users, Globe, Menu, X } from "lucide-react";
 
 interface HeaderProps {
   onOpenFamilyModal: () => void;
@@ -48,24 +47,16 @@ export function Header({ onOpenFamilyModal }: HeaderProps) {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-0.5 shrink-0">
+        <nav className="hidden xl:flex items-center gap-1 shrink-0">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="px-2.5 py-2 rounded-lg text-[13px] font-medium text-[#E4E1F5] hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
+              className="px-3 py-2 rounded-lg text-sm font-medium text-[#E4E1F5] hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
             >
               {item.label}
             </a>
           ))}
-          <Link
-            href="/admin"
-            className="px-2.5 py-2 rounded-lg text-xs font-medium text-[#C9C4E8] hover:text-[#34C8D2] hover:bg-white/10 transition-colors inline-flex items-center gap-1 whitespace-nowrap"
-            title="Admin Backend"
-          >
-            <Settings className="w-3.5 h-3.5 shrink-0" />
-            <span>{t.nav.admin}</span>
-          </Link>
         </nav>
 
         {/* Actions: Family Registration CTA & Language Switcher */}
@@ -138,14 +129,6 @@ export function Header({ onOpenFamilyModal }: HeaderProps) {
                 {item.label}
               </a>
             ))}
-            <Link
-              href="/admin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2.5 rounded-lg text-sm font-medium text-[#34C8D2] hover:bg-white/10 inline-flex items-center gap-1.5"
-            >
-              <Settings className="w-4 h-4" />
-              {t.nav.admin}
-            </Link>
           </div>
           <div className="pt-2">
             <button
