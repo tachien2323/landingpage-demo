@@ -89,7 +89,7 @@ export function ClaimsNotesContact({
       {/* Section III: Claims Guide & Lookup / Forms */}
       <section id="claims" className="bg-white border-y border-[#E6E8F0] py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <span className="text-xs font-bold uppercase tracking-wider text-[#1FA3AD]">
               {t.claims.sectionTag}
             </span>
@@ -113,9 +113,9 @@ export function ClaimsNotesContact({
                   <button
                     type="button"
                     onClick={() => openLightbox(item.desktop, item.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1FA3AD] hover:text-[#180F50] bg-white px-3 py-1.5 rounded-lg border border-[#E6E8F0] cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1FA3AD] hover:text-[#180F50] bg-white px-3 py-1.5 rounded-lg border border-[#E6E8F0] cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <ZoomIn className="w-3.5 h-3.5" />
+                    <ZoomIn className="w-3.5 h-3.5 shrink-0" />
                     <span>{t.claims.clickToZoom}</span>
                   </button>
                 </div>
@@ -179,7 +179,7 @@ export function ClaimsNotesContact({
                         rel="noopener noreferrer"
                         className="flex items-start justify-between gap-3 group"
                       >
-                        <div className="flex items-start gap-3">
+                        <div className="flex items-start gap-3 min-w-0">
                           <div
                             className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
                               isWarning
@@ -189,7 +189,7 @@ export function ClaimsNotesContact({
                           >
                             <Icon className="w-4 h-4" />
                           </div>
-                          <div>
+                          <div className="min-w-0">
                             <div
                               className={`font-bold text-sm sm:text-base group-hover:underline ${
                                 isWarning ? "text-red-700" : "text-[#180F50]"
@@ -197,7 +197,7 @@ export function ClaimsNotesContact({
                             >
                               {link.title}
                             </div>
-                            <div className="text-xs text-[#4A4766] mt-0.5">
+                            <div className="text-xs text-[#4A4766] mt-0.5 leading-relaxed">
                               {link.desc}
                             </div>
                           </div>
@@ -224,25 +224,32 @@ export function ClaimsNotesContact({
                       key={form.title}
                       className="bg-white rounded-xl border border-[#E6E8F0] p-4 hover:border-[#34C8D2] transition-all"
                     >
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex items-start gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-[#180F50] text-[#34C8D2] flex items-center justify-center shrink-0 font-bold text-xs">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-start gap-3 min-w-0">
+                          <div className="w-10 h-10 rounded-xl bg-[#180F50] text-[#34C8D2] flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">
                             {form.type}
                           </div>
-                          <div>
-                            <h4 className="font-bold text-[#180F50] text-sm sm:text-base">
-                              {form.title}
-                            </h4>
-                            <p className="text-xs text-[#4A4766] mt-1">{form.desc}</p>
+                          <div className="min-w-0">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <h4 className="font-bold text-[#180F50] text-sm sm:text-base whitespace-nowrap">
+                                {form.title}
+                              </h4>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded-md bg-[#EAF9FA] text-[#1FA3AD] whitespace-nowrap">
+                                {form.subBadge}
+                              </span>
+                            </div>
+                            <p className="text-xs text-[#4A4766] mt-1 leading-relaxed">
+                              {form.desc}
+                            </p>
                           </div>
                         </div>
                         <a
                           href={form.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 bg-[#EAF9FA] hover:bg-[#34C8D2] text-[#180F50] font-bold text-xs px-3.5 py-2 rounded-lg transition-colors shrink-0"
+                          className="inline-flex items-center gap-1.5 bg-[#EAF9FA] hover:bg-[#34C8D2] text-[#180F50] font-bold text-xs px-3.5 py-2 rounded-lg transition-colors shrink-0 whitespace-nowrap"
                         >
-                          <Download className="w-3.5 h-3.5" />
+                          <Download className="w-3.5 h-3.5 shrink-0" />
                           <span>{t.claims.downloadBtn}</span>
                         </a>
                       </div>
@@ -251,16 +258,16 @@ export function ClaimsNotesContact({
                 </ul>
               </div>
 
-              <div className="mt-6 p-4 rounded-xl bg-[#EAF9FA] border border-[#34C8D2]/30 text-xs sm:text-sm text-[#180F50]">
-                💡 <strong>Mẹo nhanh / Quick Tip:</strong> Bạn có thể hỏi trực tiếp{" "}
+              <div className="mt-6 p-4 rounded-xl bg-[#EAF9FA] border border-[#34C8D2]/30 text-xs sm:text-sm text-[#180F50] leading-relaxed">
+                💡 <strong>{t.claims.quickTipLead}</strong> {t.claims.quickTipTextBefore}{" "}
                 <button
                   type="button"
                   onClick={onOpenChat}
-                  className="font-bold text-[#1FA3AD] underline cursor-pointer"
+                  className="font-bold text-[#1FA3AD] underline cursor-pointer whitespace-nowrap"
                 >
-                  Trợ lý tư vấn AI
+                  {t.claims.quickTipLink}
                 </button>{" "}
-                để được hướng dẫn điền từng mục trong Giấy yêu cầu trả tiền bảo hiểm.
+                {t.claims.quickTipTextAfter}
               </div>
             </div>
           </div>
@@ -269,14 +276,16 @@ export function ClaimsNotesContact({
 
       {/* Section IV: 8 Important Notes */}
       <section id="notes" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="text-center max-w-2xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-wider text-[#1FA3AD]">
             {t.notes.sectionTag}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#180F50] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#180F50] mt-1 text-balance">
             {t.notes.title}
           </h2>
-          <p className="text-[#4A4766] mt-2 text-base">{t.notes.subtitle}</p>
+          <p className="text-[#4A4766] mt-2 text-base text-balance">
+            {t.notes.subtitle}
+          </p>
         </div>
 
         <div className="mt-10 bg-white rounded-2xl border border-[#E6E8F0] p-6 sm:p-8 shadow-xs">
@@ -298,7 +307,7 @@ export function ClaimsNotesContact({
                         href={t.notes.blacklistUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#1FA3AD] font-semibold underline hover:text-[#180F50]"
+                        className="text-[#1FA3AD] font-semibold underline hover:text-[#180F50] whitespace-nowrap"
                       >
                         {note.linkText}
                       </a>
@@ -315,12 +324,12 @@ export function ClaimsNotesContact({
       {/* Section V: Family Dependent Insurance Enrollment Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#180F50] via-[#221669] to-[#163868] text-white p-8 sm:p-10 lg:p-12 shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8">
-              <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#34C8D2] bg-white/10 px-3 py-1 rounded-full border border-[#34C8D2]/30">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div className="max-w-3xl">
+              <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#34C8D2] bg-white/10 px-3 py-1 rounded-full border border-[#34C8D2]/30 whitespace-nowrap">
                 {t.familyBanner.sectionTag}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold mt-3 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold mt-3 leading-tight text-balance">
                 {t.familyBanner.title}
               </h2>
               <p className="text-[#E4E1F5] mt-3 text-sm sm:text-base leading-relaxed">
@@ -341,13 +350,13 @@ export function ClaimsNotesContact({
               </ul>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col items-stretch sm:items-center lg:items-end justify-center">
+            <div className="flex items-center lg:justify-end shrink-0">
               <button
                 type="button"
                 onClick={onOpenFamilyModal}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#34C8D2] hover:bg-[#2bb5bf] text-[#180F50] font-extrabold text-base px-7 py-4 rounded-2xl shadow-lg transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#34C8D2] hover:bg-[#2bb5bf] text-[#180F50] font-extrabold text-base px-7 py-4 rounded-2xl shadow-lg transition-all cursor-pointer whitespace-nowrap"
               >
-                <Users className="w-5 h-5" />
+                <Users className="w-5 h-5 shrink-0" />
                 <span>{t.familyBanner.openModalBtn}</span>
               </button>
             </div>
@@ -358,7 +367,7 @@ export function ClaimsNotesContact({
       {/* Section VI: Contact & Support */}
       <section id="contact" className="bg-white border-t border-[#E6E8F0] py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <span className="text-xs font-bold uppercase tracking-wider text-[#1FA3AD]">
               {t.contact.sectionTag}
             </span>
@@ -376,39 +385,39 @@ export function ClaimsNotesContact({
               </h3>
               <ul className="mt-4 divide-y divide-dashed divide-[#E6E8F0] space-y-3">
                 <li className="pt-3 first:pt-0">
-                  <div className="font-bold text-[#180F50]">Ms. Cao Vân Anh</div>
+                  <div className="font-bold text-[#180F50] whitespace-nowrap">Ms. Cao Vân Anh</div>
                   <div className="mt-1 flex flex-col gap-1 text-sm text-[#4A4766]">
                     <a
                       href="tel:0902176609"
-                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD]"
+                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD] whitespace-nowrap"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#1FA3AD]" />
+                      <Phone className="w-3.5 h-3.5 text-[#1FA3AD] shrink-0" />
                       <span>0902 176 609</span>
                     </a>
                     <a
                       href="mailto:vananh.cao@bolttech.io"
-                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD]"
+                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD] whitespace-nowrap"
                     >
-                      <Mail className="w-3.5 h-3.5 text-[#1FA3AD]" />
+                      <Mail className="w-3.5 h-3.5 text-[#1FA3AD] shrink-0" />
                       <span>vananh.cao@bolttech.io</span>
                     </a>
                   </div>
                 </li>
                 <li className="pt-3">
-                  <div className="font-bold text-[#180F50]">Ms. Phan Thị Hiền</div>
+                  <div className="font-bold text-[#180F50] whitespace-nowrap">Ms. Phan Thị Hiền</div>
                   <div className="mt-1 flex flex-col gap-1 text-sm text-[#4A4766]">
                     <a
                       href="tel:0979494095"
-                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD]"
+                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD] whitespace-nowrap"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#1FA3AD]" />
+                      <Phone className="w-3.5 h-3.5 text-[#1FA3AD] shrink-0" />
                       <span>0979 494 095</span>
                     </a>
                     <a
                       href="mailto:hien.phan@bolttech.io"
-                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD]"
+                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD] whitespace-nowrap"
                     >
-                      <Mail className="w-3.5 h-3.5 text-[#1FA3AD]" />
+                      <Mail className="w-3.5 h-3.5 text-[#1FA3AD] shrink-0" />
                       <span>hien.phan@bolttech.io</span>
                     </a>
                   </div>
@@ -423,49 +432,53 @@ export function ClaimsNotesContact({
               </h3>
               <ul className="mt-4 divide-y divide-dashed divide-[#E6E8F0] space-y-3">
                 <li className="pt-3 first:pt-0">
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-[#180F50]">Mr. Dương Hùng Chiến</span>
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-[#EAF9FA] text-[#1FA3AD]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-bold text-[#180F50] whitespace-nowrap">
+                      Mr. Dương Hùng Chiến
+                    </span>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-[#EAF9FA] text-[#1FA3AD] whitespace-nowrap">
                       {t.contact.northRegion}
                     </span>
                   </div>
                   <div className="mt-1 flex flex-col gap-1 text-sm text-[#4A4766]">
                     <a
                       href="tel:0838830038"
-                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD]"
+                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD] whitespace-nowrap"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#1FA3AD]" />
+                      <Phone className="w-3.5 h-3.5 text-[#1FA3AD] shrink-0" />
                       <span>0838 830 038</span>
                     </a>
                     <a
                       href="mailto:chien.duong@bolttech.io"
-                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD]"
+                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD] whitespace-nowrap"
                     >
-                      <Mail className="w-3.5 h-3.5 text-[#1FA3AD]" />
+                      <Mail className="w-3.5 h-3.5 text-[#1FA3AD] shrink-0" />
                       <span>chien.duong@bolttech.io</span>
                     </a>
                   </div>
                 </li>
                 <li className="pt-3">
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-[#180F50]">Ms. Nguyễn Thị Ánh Thuyết</span>
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-[#EAF9FA] text-[#1FA3AD]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-bold text-[#180F50] whitespace-nowrap">
+                      Ms. Nguyễn Thị Ánh Thuyết
+                    </span>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-[#EAF9FA] text-[#1FA3AD] whitespace-nowrap">
                       {t.contact.southRegion}
                     </span>
                   </div>
                   <div className="mt-1 flex flex-col gap-1 text-sm text-[#4A4766]">
                     <a
                       href="tel:0967740239"
-                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD]"
+                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD] whitespace-nowrap"
                     >
-                      <Phone className="w-3.5 h-3.5 text-[#1FA3AD]" />
+                      <Phone className="w-3.5 h-3.5 text-[#1FA3AD] shrink-0" />
                       <span>0967 740 239</span>
                     </a>
                     <a
                       href="mailto:thuyet.nguyen@bolttech.io"
-                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD]"
+                      className="inline-flex items-center gap-2 hover:text-[#1FA3AD] whitespace-nowrap"
                     >
-                      <Mail className="w-3.5 h-3.5 text-[#1FA3AD]" />
+                      <Mail className="w-3.5 h-3.5 text-[#1FA3AD] shrink-0" />
                       <span>thuyet.nguyen@bolttech.io</span>
                     </a>
                   </div>
@@ -480,10 +493,12 @@ export function ClaimsNotesContact({
               </h3>
               <ul className="mt-4 divide-y divide-dashed divide-[#E6E8F0] space-y-3">
                 <li className="pt-3 first:pt-0">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#1FA3AD]" />
-                    <span className="font-bold text-[#180F50]">{t.contact.hanoiOffice}</span>
-                    <span className="text-xs font-semibold text-[#1FA3AD]">
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <MapPin className="w-4 h-4 text-[#1FA3AD] shrink-0" />
+                    <span className="font-bold text-[#180F50] whitespace-nowrap">
+                      {t.contact.hanoiOffice}
+                    </span>
+                    <span className="text-xs font-semibold text-[#1FA3AD] whitespace-nowrap">
                       · Mr. Dương Hùng Chiến
                     </span>
                   </div>
@@ -492,18 +507,20 @@ export function ClaimsNotesContact({
                   </p>
                   <a
                     href="tel:+842471080668"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#180F50] hover:text-[#1FA3AD] mt-1"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#180F50] hover:text-[#1FA3AD] mt-1 whitespace-nowrap"
                   >
-                    <Phone className="w-3 h-3 text-[#1FA3AD]" />
+                    <Phone className="w-3 h-3 text-[#1FA3AD] shrink-0" />
                     <span>024 7108 0668</span>
                   </a>
                 </li>
 
                 <li className="pt-3">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#1FA3AD]" />
-                    <span className="font-bold text-[#180F50]">{t.contact.hcmOffice}</span>
-                    <span className="text-xs font-semibold text-[#1FA3AD]">
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <MapPin className="w-4 h-4 text-[#1FA3AD] shrink-0" />
+                    <span className="font-bold text-[#180F50] whitespace-nowrap">
+                      {t.contact.hcmOffice}
+                    </span>
+                    <span className="text-xs font-semibold text-[#1FA3AD] whitespace-nowrap">
                       · Ms. Nguyễn Thị Ánh Thuyết
                     </span>
                   </div>
@@ -512,9 +529,9 @@ export function ClaimsNotesContact({
                   </p>
                   <a
                     href="tel:+842471080668"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#180F50] hover:text-[#1FA3AD] mt-1"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#180F50] hover:text-[#1FA3AD] mt-1 whitespace-nowrap"
                   >
-                    <Phone className="w-3 h-3 text-[#1FA3AD]" />
+                    <Phone className="w-3 h-3 text-[#1FA3AD] shrink-0" />
                     <span>024 7108 0668</span>
                   </a>
                 </li>
@@ -524,10 +541,10 @@ export function ClaimsNotesContact({
 
           {/* Bottom AI Advisor Prompt Chips CTA */}
           <div className="mt-14 bg-[#EAF9FA] rounded-3xl border border-[#34C8D2]/30 p-8 sm:p-10 text-center max-w-4xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-[#180F50]">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#180F50] text-balance">
               {t.contact.ctaTitle}
             </h3>
-            <p className="text-sm sm:text-base text-[#4A4766] mt-2 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-[#4A4766] mt-2 max-w-2xl mx-auto text-balance">
               {t.contact.ctaDesc}
             </p>
 
@@ -538,7 +555,7 @@ export function ClaimsNotesContact({
                   key={q}
                   type="button"
                   onClick={() => onAskQuestion(q)}
-                  className="bg-white hover:bg-[#FFFDF0] text-[#180F50] border border-[#180F50]/15 hover:border-[#180F50] rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-2xs"
+                  className="bg-white hover:bg-[#FFFDF0] text-[#180F50] border border-[#180F50]/15 hover:border-[#180F50] rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-2xs whitespace-nowrap"
                 >
                   <span className="text-[#1FA3AD] font-bold mr-1">“</span>
                   {q}
@@ -551,16 +568,16 @@ export function ClaimsNotesContact({
               <button
                 type="button"
                 onClick={onOpenChat}
-                className="inline-flex items-center gap-2 bg-[#180F50] hover:bg-[#34C8D2] text-white hover:text-[#180F50] font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl transition-colors cursor-pointer shadow-md"
+                className="inline-flex items-center gap-2 bg-[#180F50] hover:bg-[#34C8D2] text-white hover:text-[#180F50] font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl transition-colors cursor-pointer shadow-md whitespace-nowrap"
               >
-                <MessageSquarePlus className="w-5 h-5" />
+                <MessageSquarePlus className="w-5 h-5 shrink-0" />
                 <span>{t.contact.openChatBtn}</span>
               </button>
             </div>
 
             <p className="mt-4 text-xs sm:text-sm text-[#4A4766]">
               {t.contact.hotlinePrefix}{" "}
-              <a href="tel:+842471080668" className="font-bold text-[#180F50] underline">
+              <a href="tel:+842471080668" className="font-bold text-[#180F50] underline whitespace-nowrap">
                 024 7108 0668
               </a>
             </p>
@@ -572,7 +589,7 @@ export function ClaimsNotesContact({
       <footer className="bg-[#180F50] text-[#C9C4E8] py-8 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
           <p>{t.footer.copyright}</p>
-          <a href="#" className="hover:text-[#34C8D2] font-semibold transition-colors">
+          <a href="#" className="hover:text-[#34C8D2] font-semibold transition-colors whitespace-nowrap">
             {t.footer.backToTop}
           </a>
         </div>
@@ -593,9 +610,9 @@ export function ClaimsNotesContact({
               <button
                 type="button"
                 onClick={closeLightbox}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg cursor-pointer whitespace-nowrap"
               >
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4 shrink-0" />
                 <span>{t.claims.closeZoom}</span>
               </button>
             </div>

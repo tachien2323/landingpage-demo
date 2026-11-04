@@ -31,7 +31,7 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
   return (
     <section id="benefits" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
       {/* Section Header */}
-      <div className="max-w-3xl">
+      <div className="max-w-5xl">
         <span className="text-xs font-bold uppercase tracking-wider text-[#1FA3AD]">
           {t.benefits.sectionTag}
         </span>
@@ -52,14 +52,16 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-[#EAF9FA] text-[#180F50] flex items-center justify-center group-hover:bg-[#180F50] group-hover:text-[#34C8D2] transition-colors">
+                  <div className="w-11 h-11 rounded-xl bg-[#EAF9FA] text-[#180F50] flex items-center justify-center group-hover:bg-[#180F50] group-hover:text-[#34C8D2] transition-colors shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-[#F7F8FC] text-[#4A4766] border border-[#E6E8F0]">
+                  <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-[#F7F8FC] text-[#4A4766] border border-[#E6E8F0] whitespace-nowrap">
                     {doc.badge}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-[#180F50]">{doc.title}</h3>
+                <h3 className="text-lg font-bold text-[#180F50] whitespace-nowrap">
+                  {doc.title}
+                </h3>
                 <p className="text-sm text-[#4A4766] mt-2 leading-relaxed">{doc.desc}</p>
               </div>
 
@@ -68,10 +70,10 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
                   href={doc.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1FA3AD] hover:text-[#180F50] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1FA3AD] hover:text-[#180F50] transition-colors whitespace-nowrap"
                 >
                   <span>{t.benefits.viewDoc}</span>
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-4 h-4 shrink-0" />
                 </a>
               </div>
             </div>
@@ -82,9 +84,9 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
       {/* Plans A, B, C, D Comparison Table (with responsive-table modern web guidance) */}
       <div className="mt-12 bg-white rounded-2xl border border-[#E6E8F0] p-6 sm:p-8 shadow-sm">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
-          <div>
+          <div className="min-w-0">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#1FA3AD] mb-1">
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-4 h-4 shrink-0" />
               <span>A · B · C · D</span>
             </div>
             <h3 id="plans-table-caption" className="text-xl sm:text-2xl font-extrabold text-[#180F50]">
@@ -96,9 +98,9 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
           <button
             type="button"
             onClick={() => onSelectPlanForFamily("A")}
-            className="inline-flex items-center justify-center gap-2 bg-[#180F50] hover:bg-[#34C8D2] text-white hover:text-[#180F50] font-bold text-sm px-5 py-3 rounded-xl transition-colors cursor-pointer self-start lg:self-center shrink-0"
+            className="inline-flex items-center justify-center gap-2 bg-[#180F50] hover:bg-[#34C8D2] text-white hover:text-[#180F50] font-bold text-sm px-5 py-3 rounded-xl transition-colors cursor-pointer self-start lg:self-center shrink-0 whitespace-nowrap"
           >
-            <Users className="w-4 h-4" />
+            <Users className="w-4 h-4 shrink-0" />
             <span>{t.benefits.registerFamilyCta}</span>
           </button>
         </div>
@@ -128,7 +130,7 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
                 {[planA, planB, planC, planD].map((p, i) => (
                   <th
                     key={p.code}
-                    className={`p-4 font-bold text-sm ${
+                    className={`p-4 font-bold text-sm whitespace-nowrap ${
                       i === 3 ? "rounded-tr-xl" : ""
                     }`}
                   >
@@ -149,12 +151,12 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
                   {t.benefits.rows.fee}
                 </th>
                 {[planA, planB, planC, planD].map((p) => (
-                  <td key={p.code} className="p-4 font-extrabold text-[#180F50] text-base">
+                  <td key={p.code} className="p-4 font-extrabold text-[#180F50] text-base whitespace-nowrap">
                     <div>{p.annualFee.toLocaleString("vi-VN")} ₫</div>
                     <button
                       type="button"
                       onClick={() => onSelectPlanForFamily(p.code)}
-                      className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-[#1FA3AD] hover:text-[#180F50] underline cursor-pointer"
+                      className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-[#1FA3AD] hover:text-[#180F50] underline cursor-pointer whitespace-nowrap"
                     >
                       {lang === "vi" ? `Chọn gói ${p.code}` : `Select Plan ${p.code}`}
                     </button>
@@ -167,10 +169,10 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
                 <th className="p-4 font-semibold text-[#180F50]">
                   {t.benefits.rows.accident}
                 </th>
-                <td className="p-4 text-[#4A4766] font-medium">{planA.accidentLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planB.accidentLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planC.accidentLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planD.accidentLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planA.accidentLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planB.accidentLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planC.accidentLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planD.accidentLimit}</td>
               </tr>
 
               {/* Inpatient */}
@@ -178,10 +180,10 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
                 <th className="p-4 font-semibold text-[#180F50]">
                   {t.benefits.rows.inpatient}
                 </th>
-                <td className="p-4 text-[#4A4766] font-medium">{planA.inpatientLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planB.inpatientLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planC.inpatientLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planD.inpatientLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planA.inpatientLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planB.inpatientLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planC.inpatientLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planD.inpatientLimit}</td>
               </tr>
 
               {/* Outpatient */}
@@ -189,10 +191,10 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
                 <th className="p-4 font-semibold text-[#180F50]">
                   {t.benefits.rows.outpatient}
                 </th>
-                <td className="p-4 text-[#4A4766] font-medium">{planA.outpatientLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planB.outpatientLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planC.outpatientLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planD.outpatientLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planA.outpatientLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planB.outpatientLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planC.outpatientLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planD.outpatientLimit}</td>
               </tr>
 
               {/* Dental */}
@@ -200,10 +202,10 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
                 <th className="p-4 font-semibold text-[#180F50]">
                   {t.benefits.rows.dental}
                 </th>
-                <td className="p-4 text-[#4A4766] font-medium">{planA.dentalLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planB.dentalLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planC.dentalLimit}</td>
-                <td className="p-4 text-[#4A4766] font-medium">{planD.dentalLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planA.dentalLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planB.dentalLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planC.dentalLimit}</td>
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">{planD.dentalLimit}</td>
               </tr>
 
               {/* Maternity */}
@@ -211,16 +213,16 @@ export function BenefitsSection({ plans, onSelectPlanForFamily }: BenefitsSectio
                 <th className="p-4 font-semibold text-[#180F50]">
                   {t.benefits.rows.maternity}
                 </th>
-                <td className="p-4 text-[#4A4766] font-medium">
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">
                   {lang === "vi" ? planA.maternityLimitVi : planA.maternityLimitEn}
                 </td>
-                <td className="p-4 text-[#4A4766] font-medium">
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">
                   {lang === "vi" ? planB.maternityLimitVi : planB.maternityLimitEn}
                 </td>
-                <td className="p-4 text-[#4A4766] font-medium">
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">
                   {lang === "vi" ? planC.maternityLimitVi : planC.maternityLimitEn}
                 </td>
-                <td className="p-4 text-[#4A4766] font-medium">
+                <td className="p-4 text-[#4A4766] font-medium whitespace-nowrap">
                   {lang === "vi" ? planD.maternityLimitVi : planD.maternityLimitEn}
                 </td>
               </tr>

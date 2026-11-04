@@ -500,9 +500,9 @@ export function FamilyRegistrationModal({
                   <button
                     type="button"
                     onClick={handleAddDependent}
-                    className="inline-flex items-center gap-1.5 bg-[#180F50] hover:bg-[#34C8D2] text-white hover:text-[#180F50] font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition-colors cursor-pointer self-start sm:self-auto"
+                    className="inline-flex items-center gap-1.5 bg-[#180F50] hover:bg-[#34C8D2] text-white hover:text-[#180F50] font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition-colors cursor-pointer self-start sm:self-auto whitespace-nowrap shrink-0"
                   >
-                    <Plus className="w-4 h-4" />
+                    <Plus className="w-4 h-4 shrink-0" />
                     <span>{t.familyModal.addDependentBtn}</span>
                   </button>
                 </div>
@@ -698,27 +698,27 @@ export function FamilyRegistrationModal({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3 shrink-0">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="px-4 py-3 rounded-xl border border-white/25 text-white text-sm font-semibold hover:bg-white/10 transition-colors cursor-pointer"
+                    className="px-4 py-3 rounded-xl border border-white/25 text-white text-sm font-semibold hover:bg-white/10 transition-colors cursor-pointer whitespace-nowrap shrink-0"
                   >
                     {t.familyModal.cancelBtn}
                   </button>
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="inline-flex items-center gap-2 bg-[#34C8D2] hover:bg-[#2bb5bf] disabled:opacity-60 text-[#180F50] font-extrabold text-sm sm:text-base px-6 py-3 rounded-xl shadow-lg transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 bg-[#34C8D2] hover:bg-[#2bb5bf] disabled:opacity-60 text-[#180F50] font-extrabold text-sm sm:text-base px-6 py-3 rounded-xl shadow-lg transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
                     {submitting ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <Loader2 className="w-4 h-4 animate-spin shrink-0" />
                         <span>{t.familyModal.submittingBtn}</span>
                       </>
                     ) : (
                       <>
-                        <FileSpreadsheet className="w-4 h-4" />
+                        <FileSpreadsheet className="w-4 h-4 shrink-0" />
                         <span>{t.familyModal.submitBtn}</span>
                       </>
                     )}

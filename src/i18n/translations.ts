@@ -16,15 +16,15 @@ export const translations = {
       familyReg: "Đăng ký người thân",
       contact: "Liên hệ",
       admin: "Quản trị",
-      registerBtn: "Đăng ký cho người thân",
+      registerBtn: "Đăng ký người thân",
     },
     hero: {
       badge: "BẢO HIỂM SỨC KHỎE & TAI NẠN · NĂM 2027",
       title: "Cổng thông tin chương trình bảo hiểm của Khách hàng Demo",
       subtitle:
-        "Tra cứu quyền lợi, tải tài liệu, làm theo hướng dẫn bồi thường và đăng ký mở rộng bảo hiểm cho người thân tại một nơi. Có thắc mắc, hỏi ngay trợ lý tư vấn AI 24/7 trong khung chat.",
+        "Tra cứu quyền lợi, tải tài liệu, làm theo hướng dẫn bồi thường và đăng ký bảo hiểm cho người thân tại một nơi. Có thắc mắc, hỏi ngay trợ lý tư vấn AI 24/7 trong khung chat.",
       btnClaims: "Hướng dẫn bồi thường",
-      btnFamily: "Đăng ký mua cho người thân",
+      btnFamily: "Đăng ký cho người thân",
       btnChat: "Hỏi trợ lý tư vấn AI",
     },
     general: {
@@ -62,7 +62,7 @@ export const translations = {
       docs: [
         {
           title: "Sổ tay bảo hiểm",
-          desc: "Tóm tắt quyền lợi, hạn mức và cách dùng thẻ bảo hiểm khi đi khám.",
+          desc: "Tóm tắt quyền lợi, hạn mức và hướng dẫn sử dụng thẻ bảo hiểm khi đi khám.",
           url: "https://baohiem24g.com/wp-content/uploads/2025/11/So-tay-Demo.pdf",
           badge: "PDF · Quan trọng",
         },
@@ -74,20 +74,20 @@ export const translations = {
         },
         {
           title: "Điều khoản loại trừ",
-          desc: "Các trường hợp, bệnh lý và chi phí không được bảo hiểm chi trả.",
+          desc: "Các trường hợp, bệnh lý và chi phí không thuộc phạm vi bảo hiểm chi trả.",
           url: "https://baohiem24g.com/wp-content/uploads/2023/12/Dieu-khoan-loai-tru.pdf",
           badge: "PDF · Cần lưu ý",
         },
         {
           title: "Hướng dẫn dùng App",
-          desc: "Cách tra cứu thẻ bảo hiểm điện tử, quyền lợi và gửi hồ sơ trên ứng dụng Fullerton Health Concierge.",
+          desc: "Cách tra cứu thẻ bảo hiểm điện tử, quyền lợi và gửi hồ sơ trên ứng dụng.",
           url: "https://baohiem24g.com/wp-content/uploads/2025/04/3.-FHVI-HDSD-Fullerton-Health-Concierge-Dang-nhap-bang-CCCDHo-chieu-Ma-cong-ty-VN.pdf",
           badge: "PDF · Ứng dụng",
         },
       ],
       tableTitle: "Bảng tóm tắt quyền lợi & Mức phí Chương trình A, B, C, D",
       tableSubtitle:
-        "Áp dụng cho Cán bộ nhân viên và chương trình đăng ký tự nguyện dành cho Người thân (cập nhật thời gian thực từ hệ thống):",
+        "Áp dụng cho Cán bộ nhân viên và chương trình đăng ký tự nguyện cho Người thân:",
       colBenefit: "Hạng mục quyền lợi",
       rows: {
         fee: "Mức phí người thân / năm",
@@ -95,43 +95,43 @@ export const translations = {
         inpatient: "Điều trị Nội trú (Ốm đau, bệnh tật, phẫu thuật)",
         outpatient: "Điều trị Ngoại trú (Khám & thuốc theo đơn)",
         dental: "Chăm sóc Nha khoa (Khám, lấy cao răng, hàn răng)",
-        maternity: "Thai sản (Sinh thường & sinh mổ do chỉ định y khoa)",
+        maternity: "Thai sản (Sinh thường & sinh mổ chỉ định y khoa)",
       },
-      registerFamilyCta: "Mở Form đăng ký mua bảo hiểm cho người thân",
+      registerFamilyCta: "Đăng ký mua cho người thân",
     },
     claims: {
       sectionTag: "III · HƯỚNG DẪN BỒI THƯỜNG",
       title: "Quy trình và hồ sơ bồi thường",
       subtitle:
-        "Chọn bảo lãnh viện phí trực tiếp tại bệnh viện hoặc tự thanh toán rồi nộp hồ sơ sau. Nhấn vào ảnh sơ đồ để xem cỡ lớn.",
+        "Chọn bảo lãnh viện phí hoặc tự thanh toán rồi nộp hồ sơ sau. Nhấn vào ảnh để xem cỡ lớn.",
       tabProcess: "Sơ đồ Quy trình bồi thường",
       tabDocs: "Danh mục Chứng từ cần thiết",
-      clickToZoom: "Nhấn vào ảnh để phóng to (Xem cỡ lớn)",
+      clickToZoom: "Phóng to ảnh",
       closeZoom: "Đóng chế độ phóng to",
       lookupTitle: "Tra cứu trước khi đi khám",
-      lookupSubtitle: "Kiểm tra danh sách bệnh viện, nhà thuốc hợp lệ trước khi sử dụng dịch vụ:",
+      lookupSubtitle: "Kiểm tra danh sách bệnh viện và nhà thuốc hợp lệ trước khi sử dụng dịch vụ:",
       lookupLinks: [
         {
           title: "Danh sách cơ sở bảo lãnh viện phí",
-          desc: "Hệ thống bệnh viện & phòng khám bảo lãnh trực tiếp trên toàn quốc (.xlsx)",
+          desc: "Hệ thống bệnh viện và phòng khám bảo lãnh trực tiếp trên toàn quốc.",
           url: "https://baohiem24g.com/wp-content/uploads/2025/05/FHVI-Directbilling-Network-Update-14.02.2025.xlsx",
           type: "XLSX",
         },
         {
           title: "Bệnh viện miễn dấu trên hóa đơn",
-          desc: "Danh sách bệnh viện được chấp nhận hóa đơn điện tử không cần đóng dấu mộc (.pdf)",
+          desc: "Danh sách bệnh viện chấp nhận hóa đơn điện tử không cần đóng dấu mộc.",
           url: "https://baohiem24g.com/wp-content/uploads/2023/04/Danh-sach-BV-mien-dau-tren-Hoa-don.pdf",
           type: "PDF",
         },
         {
           title: "Nhà thuốc có hóa đơn VAT",
-          desc: "Gợi ý các chuỗi nhà thuốc xuất hóa đơn tài chính GTGT hợp lệ (.pdf)",
+          desc: "Gợi ý các chuỗi nhà thuốc xuất hóa đơn tài chính GTGT hợp lệ.",
           url: "https://baohiem24g.com/wp-content/uploads/2023/04/Danh-sach-nha-thuoc-co-hoa-don-VAT.pdf",
           type: "PDF",
         },
         {
           title: "Danh sách từ chối bảo hiểm (Blacklist)",
-          desc: "Các cơ sở y tế KHÔNG thuộc phạm vi chi trả bảo hiểm (.xlsx)",
+          desc: "Các cơ sở y tế không thuộc phạm vi chi trả bảo hiểm.",
           url: "https://baohiem24g.com/wp-content/uploads/2025/05/BLACKLIST-VNI-Phong-Vu.xlsx",
           type: "WARNING",
         },
@@ -140,24 +140,31 @@ export const translations = {
       formsSubtitle: "Điền đầy đủ, ký tên và gửi kèm chứng từ gốc khi yêu cầu bồi thường:",
       formsLinks: [
         {
-          title: "Giấy yêu cầu trả tiền bảo hiểm (Claim Form)",
-          desc: "Mẫu đơn song ngữ Việt - Anh không cần xác nhận của công ty (.docx)",
+          title: "Giấy yêu cầu trả tiền bảo hiểm",
+          subBadge: "Claim Form",
+          desc: "Mẫu đơn song ngữ Việt – Anh, không cần xác nhận của công ty.",
           url: "https://baohiem24g.com/wp-content/uploads/2024/01/Claim-form-VNI-Care_VE-without-confirmation-of-company.docx",
           type: "DOCX",
         },
         {
-          title: "Biên bản tường trình tai nạn (Accident Report)",
-          desc: "Bắt buộc bổ sung khi phát sinh khám và điều trị do nguyên nhân tai nạn (.doc)",
+          title: "Biên bản tường trình tai nạn",
+          subBadge: "Accident Report",
+          desc: "Bắt buộc bổ sung khi khám và điều trị do nguyên nhân tai nạn.",
           url: "https://baohiem24g.com/wp-content/uploads/2024/02/BAN-TUONG-TRINH-TAI-NAN.doc",
           type: "DOC",
         },
       ],
       downloadBtn: "Tải về",
+      quickTipLead: "Mẹo nhanh:",
+      quickTipTextBefore: "Bạn có thể hỏi trực tiếp",
+      quickTipLink: "Trợ lý tư vấn AI",
+      quickTipTextAfter: "để được hướng dẫn điền từng mục trong Giấy yêu cầu trả tiền bảo hiểm.",
     },
     notes: {
       sectionTag: "IV · LƯU Ý QUAN TRỌNG",
       title: "Những điều cần biết để hồ sơ được chi trả",
-      subtitle: "8 lưu ý thiết yếu giúp Cán bộ nhân viên và người thân đảm bảo quyền lợi tối đa khi đi khám:",
+      subtitle:
+        "8 lưu ý thiết yếu giúp Cán bộ nhân viên và người thân đảm bảo quyền lợi tối đa khi đi khám:",
       blacklistUrl: "https://baohiem24g.com/wp-content/uploads/2025/05/BLACKLIST-VNI-Phong-Vu.xlsx",
       items: [
         {
@@ -200,11 +207,11 @@ export const translations = {
       sectionTag: "V · ĐĂNG KÝ BẢO HIỂM CHO NGƯỜI THÂN",
       title: "Mở rộng lá chắn bảo vệ sức khỏe cho cả gia đình",
       subtitle:
-        "Cán bộ nhân viên Khách hàng Demo có thể đăng ký tham gia chương trình bảo hiểm sức khỏe ưu đãi cho người thân (Vợ/Chồng, Con cái, Bố/Mẹ). Thông tin đăng ký được ghi nhận trực tiếp vào hệ thống Google Worksheet để cấp đơn nhanh chóng.",
+        "Cán bộ nhân viên Khách hàng Demo có thể đăng ký tham gia chương trình bảo hiểm sức khỏe ưu đãi cho người thân (Vợ/Chồng, Con cái, Bố/Mẹ). Thông tin đăng ký được ghi trực tiếp vào Google Worksheet để cấp đơn nhanh chóng.",
       bullet1: "Đăng ký cùng lúc cho nhiều người thân (>1 người nhà)",
       bullet2: "Tự động tính mức phí theo Chương trình lựa chọn (A, B, C, D)",
       bullet3: "Đồng bộ trực tiếp vào Google Worksheet để cấp đơn ngay",
-      openModalBtn: "Mở Form đăng ký mua cho người thân",
+      openModalBtn: "Đăng ký mua cho người thân",
     },
     familyModal: {
       title: "Đăng ký Bảo hiểm Sức khỏe cho Người thân",
@@ -276,12 +283,12 @@ export const translations = {
       hcmAddress: "Tầng 3, Tòa nhà An Khánh, 63 Phạm Ngọc Thạch, P. Xuân Hòa",
       ctaTitle: "Còn thắc mắc? Hỏi trợ lý tư vấn trong khung chat",
       ctaDesc:
-        "Đặt bất kỳ câu hỏi nào bạn cần giải đáp: quyền lợi cụ thể, thủ tục bồi thường, cơ sở bảo lãnh viện phí, mức phí người thân… Nhấn nút bên dưới hoặc biểu tượng chat ở góc phải màn hình.",
+        "Đặt bất kỳ câu hỏi nào bạn cần giải đáp về quyền lợi, thủ tục bồi thường, cơ sở bảo lãnh viện phí hoặc mức phí người thân. Nhấn vào câu hỏi gợi ý bên dưới hoặc mở biểu tượng chat ở góc phải màn hình.",
       suggestedQuestions: [
         "Khám ngoại trú được chi trả những gì?",
         "Cần giấy tờ gì để bồi thường nằm viện?",
         "Bệnh viện nào có bảo lãnh viện phí?",
-        "Mức phí đăng ký cho người thân gói A, B, C, D là bao nhiêu?",
+        "Mức phí đăng ký cho người thân gói A, B, C, D?",
       ],
       openChatBtn: "Mở khung chat tư vấn AI",
       hotlinePrefix: "Cần gặp người hỗ trợ? Gọi tổng đài",
@@ -317,7 +324,7 @@ export const translations = {
       familyReg: "Family Enrollment",
       contact: "Contact",
       admin: "Admin",
-      registerBtn: "Enroll Family Members",
+      registerBtn: "Enroll Family",
     },
     hero: {
       badge: "HEALTH & PERSONAL ACCIDENT INSURANCE · 2027",
@@ -358,7 +365,7 @@ export const translations = {
       sectionTag: "II · INSURANCE BENEFITS",
       title: "Benefit Documents & Plan Comparison",
       subtitle:
-        "Review your policy documents carefully before visiting a clinic, or compare Plans A, B, C, and D for family dependent enrollment.",
+        "Review your policy documents carefully before visiting a clinic, or compare Plans A, B, C, and D for family enrollment.",
       viewDoc: "View Document",
       docs: [
         {
@@ -381,14 +388,14 @@ export const translations = {
         },
         {
           title: "Mobile App Guide",
-          desc: "How to check benefits, e-card, and submit claims via Fullerton Health Concierge app.",
+          desc: "How to check benefits, e-card, and submit claims via Fullerton Health Concierge.",
           url: "https://baohiem24g.com/wp-content/uploads/2025/04/3.-FHVI-HDSD-Fullerton-Health-Concierge-Dang-nhap-bang-CCCDHo-chieu-Ma-cong-ty-VN.pdf",
           badge: "PDF · Mobile App",
         },
       ],
       tableTitle: "Summary of Benefits & Annual Premiums (Plans A, B, C, D)",
       tableSubtitle:
-        "Applicable to Employees and voluntary Family Dependent enrollment (synced in real time from Admin settings):",
+        "Applicable to Employees and voluntary Family Dependent enrollment:",
       colBenefit: "Benefit Category",
       rows: {
         fee: "Annual Dependent Premium",
@@ -398,41 +405,41 @@ export const translations = {
         dental: "Dental Care (Check-up, Scaling, Cavity Filling)",
         maternity: "Maternity Care (Normal Delivery & Medically Necessary C-Section)",
       },
-      registerFamilyCta: "Open Family Dependent Enrollment Form",
+      registerFamilyCta: "Enroll Family Dependents",
     },
     claims: {
       sectionTag: "III · CLAIMS GUIDE",
       title: "Claim Procedures & Required Documents",
       subtitle:
-        "Choose Direct Billing at network hospitals or Pay & Claim (Reimbursement). Click any infographic below to view full size.",
+        "Choose cashless direct billing or pay upfront and claim later. Click any diagram to view full size.",
       tabProcess: "Claims Process Flowchart",
       tabDocs: "Required Claim Documents",
-      clickToZoom: "Click image to zoom in (Full screen)",
+      clickToZoom: "Zoom image",
       closeZoom: "Close full screen view",
       lookupTitle: "Pre-Visit Hospital & Pharmacy Lookup",
       lookupSubtitle: "Verify eligible hospitals and pharmacies before your medical visit:",
       lookupLinks: [
         {
           title: "Direct Billing Hospital Network",
-          desc: "Nationwide list of hospitals & clinics offering cashless direct billing (.xlsx)",
+          desc: "Nationwide list of hospitals and clinics offering cashless direct billing.",
           url: "https://baohiem24g.com/wp-content/uploads/2025/05/FHVI-Directbilling-Network-Update-14.02.2025.xlsx",
           type: "XLSX",
         },
         {
           title: "Hospitals Exempt from Invoice Stamp",
-          desc: "List of hospitals whose e-invoices are accepted without a physical wet stamp (.pdf)",
+          desc: "List of hospitals whose e-invoices are accepted without a wet stamp.",
           url: "https://baohiem24g.com/wp-content/uploads/2023/04/Danh-sach-BV-mien-dau-tren-Hoa-don.pdf",
           type: "PDF",
         },
         {
           title: "Pharmacies Issuing VAT Invoices",
-          desc: "Recommended pharmacy chains providing valid official VAT invoices (.pdf)",
+          desc: "Recommended pharmacy chains providing valid official VAT invoices.",
           url: "https://baohiem24g.com/wp-content/uploads/2023/04/Danh-sach-nha-thuoc-co-hoa-don-VAT.pdf",
           type: "PDF",
         },
         {
           title: "Blacklisted Medical Providers",
-          desc: "Medical providers EXCLUDED from insurance reimbursement (.xlsx)",
+          desc: "Medical providers excluded from insurance reimbursement.",
           url: "https://baohiem24g.com/wp-content/uploads/2025/05/BLACKLIST-VNI-Phong-Vu.xlsx",
           type: "WARNING",
         },
@@ -441,24 +448,31 @@ export const translations = {
       formsSubtitle: "Complete, sign, and submit along with original medical and payment receipts:",
       formsLinks: [
         {
-          title: "Claim Form (Bilingual VI-EN)",
-          desc: "Standard VNI Care claim form — no company stamp required (.docx)",
+          title: "Insurance Claim Form",
+          subBadge: "Bilingual VI-EN",
+          desc: "Standard VNI Care claim form — no company stamp required.",
           url: "https://baohiem24g.com/wp-content/uploads/2024/01/Claim-form-VNI-Care_VE-without-confirmation-of-company.docx",
           type: "DOCX",
         },
         {
           title: "Accident Report Form",
-          desc: "Required when claiming medical expenses caused by an accident (.doc)",
+          subBadge: "Required for Accidents",
+          desc: "Mandatory supplement when claiming medical expenses caused by an accident.",
           url: "https://baohiem24g.com/wp-content/uploads/2024/02/BAN-TUONG-TRINH-TAI-NAN.doc",
           type: "DOC",
         },
       ],
       downloadBtn: "Download",
+      quickTipLead: "Quick Tip:",
+      quickTipTextBefore: "Ask our",
+      quickTipLink: "AI Insurance Advisor",
+      quickTipTextAfter: "for step-by-step guidance on filling out your Claim Form.",
     },
     notes: {
       sectionTag: "IV · IMPORTANT NOTES",
       title: "Key Guidelines to Ensure Smooth Claim Reimbursement",
-      subtitle: "8 essential rules every employee and family member should know before visiting a doctor:",
+      subtitle:
+        "8 essential rules to help employees and family members maximize coverage during medical visits:",
       blacklistUrl: "https://baohiem24g.com/wp-content/uploads/2025/05/BLACKLIST-VNI-Phong-Vu.xlsx",
       items: [
         {
@@ -505,7 +519,7 @@ export const translations = {
       bullet1: "Enroll multiple family members (>1 dependent) in a single form",
       bullet2: "Instant premium calculation based on selected Plan (A, B, C, or D)",
       bullet3: "Real-time sync to Google Worksheet for immediate policy issuance",
-      openModalBtn: "Open Family Enrollment Form",
+      openModalBtn: "Enroll Family Dependents",
     },
     familyModal: {
       title: "Family Dependent Health Insurance Enrollment",
@@ -582,7 +596,7 @@ export const translations = {
         "What does Outpatient coverage include?",
         "What documents are required for Inpatient reimbursement?",
         "Which hospitals support cashless direct billing?",
-        "What are the annual rates for Family Plans A, B, C, and D?",
+        "What are the annual rates for Family Plans A, B, C, D?",
       ],
       openChatBtn: "Open AI Advisor Chat",
       hotlinePrefix: "Need human assistance? Call our hotline",
